@@ -8,6 +8,7 @@ namespace Exercise_4
         {
             Product1ToN();
         }
+
         static void Product1ToN()
         {
             int factorial = 1;

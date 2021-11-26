@@ -16,7 +16,6 @@ namespace CalculateArea
         public static double AreaOfRectangle(decimal length, decimal width)
         {
             return (double)length * (double)width;
-
         }
 
         public static double AreaOfTriangle(decimal ground, decimal h)

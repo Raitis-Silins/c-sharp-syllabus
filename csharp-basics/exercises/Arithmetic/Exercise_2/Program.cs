@@ -11,6 +11,7 @@ namespace Exercise2
             CheckOddEven(numberEntered);
             Console.WriteLine("bye!");
         }
+
         static void CheckOddEven(int numberEntered)
         {
             if (numberEntered % 2 == 0)

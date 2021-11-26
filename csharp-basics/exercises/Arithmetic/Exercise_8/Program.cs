@@ -22,10 +22,12 @@ namespace Exercise_8
             if (hoursWorked > 60 || basePay < 8)
             {
                 Console.WriteLine("error");
-            } else if (hoursWorked <= 40)
+            } 
+            else if (hoursWorked <= 40)
             {
                 Console.WriteLine(hoursWorked * basePay);
-            } else if (hoursWorked > 40)
+            } 
+            else if (hoursWorked > 40)
             {
                 double pay = 40 * basePay;
                 double nextBasePay = 1.5 * basePay;
