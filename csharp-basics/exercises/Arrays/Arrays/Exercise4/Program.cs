@@ -18,13 +18,11 @@ namespace Exercise4
                 1456, 2265, 1457, 2456
             };
 
-            /*
-            fixme - check if contains number 1245 
-            for (?) {
-                ......
-                Console.WriteLine("Contains!");
+            int index = Array.IndexOf(myArray, 1254);
+            if (index > -1)
+            {
+                Console.WriteLine($"Contains!");
             }
-            */
         }
     }
 }
