@@ -15,7 +15,6 @@ namespace TenBillion
             
             if (long.TryParse(input, out n))
             {
-
                 if (n < 0) 
                 {
                     n *= -1;
