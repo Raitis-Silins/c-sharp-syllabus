@@ -19,6 +19,7 @@ namespace TicTacToe
 
             while (GetWinner(player) == false || CheckIfDraw(player) == false)
             {
+
                 Console.Clear();
                 DisplayBoard(board);
 
@@ -35,12 +36,24 @@ namespace TicTacToe
                 }
 
                 Console.Write("Please enter a row: ");
-                int row = int.Parse(Console.ReadLine());
-                Console.Write("Please enter a col: ");
-                int col = int.Parse(Console.ReadLine());
+                int row = int.Parse(Console.ReadKey().KeyChar.ToString());
+                //int row = int.Parse(Console.ReadLine());
+                Console.Write("\nPlease enter a col: ");
+                int col = int.Parse(Console.ReadKey().KeyChar.ToString());
+                //int col = int.Parse(Console.ReadLine());
 
-                board[row, col] = player;
-                player = ChangeTurn(player);
+
+
+                if (board[row, col] == 'X' || board[row, col] == 'O' )
+                {
+                    Console.WriteLine("Already exist's");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    board[row, col] = player;
+                    player = ChangeTurn(player);
+                }
             }
         }
 
