@@ -37,12 +37,8 @@ namespace TicTacToe
 
                 Console.Write("Please enter a row: ");
                 int row = int.Parse(Console.ReadKey().KeyChar.ToString());
-                //int row = int.Parse(Console.ReadLine());
                 Console.Write("\nPlease enter a col: ");
                 int col = int.Parse(Console.ReadKey().KeyChar.ToString());
-                //int col = int.Parse(Console.ReadLine());
-
-
 
                 if (board[row, col] == 'X' || board[row, col] == 'O' )
                 {
