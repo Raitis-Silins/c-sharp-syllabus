@@ -8,29 +8,108 @@ namespace TicTacToe
 
         private static void Main(string[] args)
         {
-            InitBoard();
-            DisplayBoard();
+            Initialize(board);
+            DisplayBoard(board);
+            Game();
         }
 
-        private static void InitBoard()
+       private static void Game()
         {
-            // fills up the board with blanks
-            for (var r = 0; r < 3; r++)
+            char player = 'X';
+
+            while (GetWinner(player) == false || CheckIfDraw(player) == false)
             {
-                for (var c = 0; c < 3; c++)
-                    board[r, c] = ' ';
+
+                Console.Clear();
+                DisplayBoard(board);
+
+                if (GetWinner(player) == true)
+                {
+                    Console.WriteLine($" Player {player} has won !");
+                    break;
+                }
+
+                if (CheckIfDraw(player) == true)
+                {
+                    Console.WriteLine("DRAW!!");
+                    break;
+                }
+
+                Console.Write("Please enter a row: ");
+                int row = int.Parse(Console.ReadKey().KeyChar.ToString());
+                Console.Write("\nPlease enter a col: ");
+                int col = int.Parse(Console.ReadKey().KeyChar.ToString());
+
+                if (board[row, col] == 'X' || board[row, col] == 'O' )
+                {
+                    Console.WriteLine("Already exist's");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    board[row, col] = player;
+                    player = ChangeTurn(player);
+                }
             }
-            
         }
 
-        private static void DisplayBoard()
+       private static char ChangeTurn(char currentPlayer)
         {
-            Console.WriteLine("  0  " + board[0, 0] + "|" + board[0, 1] + "|" + board[0, 2]);
-            Console.WriteLine("    --+-+--");
-            Console.WriteLine("  1  " + board[1, 0] + "|" + board[1, 1] + "|" + board[1, 2]);
-            Console.WriteLine("    --+-+--");
-            Console.WriteLine("  2  " + board[2, 0] + "|" + board[2, 1] + "|" + board[2, 2]);
-            Console.WriteLine("    --+-+--");
+            return currentPlayer == 'X' ? 'O' : 'X';
         }
+
+       private static void Initialize(char[,] board)
+        {
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    board[row, col] = ' ';
+                }
+            }
+        }
+
+        private static void DisplayBoard(char[,] board)
+        {
+            Console.WriteLine("  | 0 | 1 | 2 |");
+            for (int row = 0; row < 3; row++)
+            {
+                Console.Write(row + " | ");
+                for (int col = 0; col < 3; col++)
+                {
+                    Console.Write(board[row, col]);
+                    Console.Write(" | ");
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+       private static bool GetWinner(char player)
+        {
+            return player == board[0, 0] && player == board[0, 1] && player == board[0, 2] ||
+            player == board[1, 0] && player == board[1, 1] && player == board[1, 2] ||
+            player == board[2, 0] && player == board[2, 1] && player == board[2, 2] ||
+            player == board[0, 0] && player == board[1, 0] && player == board[2, 0] ||
+            player == board[0, 1] && player == board[1, 1] && player == board[2, 1] ||
+            player == board[0, 2] && player == board[1, 2] && player == board[2, 2] ||
+            player == board[0, 0] && player == board[1, 1] && player == board[2, 2] ||
+            player == board[0, 2] && player == board[1, 1] && player == board[2, 0];
+        }
+
+       private static bool CheckIfDraw(char player)
+       {
+           for (int r = 0; r < 3; r++)
+           {
+               for (int c = 0; c < 3; c++)
+               {
+                   if (board[r, c] == ' ')
+                   {
+                       return false;
+                   }
+               }
+           }
+           return true;
+       }
     }
 }
