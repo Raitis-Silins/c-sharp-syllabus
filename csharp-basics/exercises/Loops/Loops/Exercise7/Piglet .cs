@@ -4,7 +4,7 @@ namespace Exercise7
 {
     class Piglet
     {
-        public static void Main()
+        public static void Game()
         {
             Console.WriteLine("Welcome to Piglet!");
             Random random = new Random();
