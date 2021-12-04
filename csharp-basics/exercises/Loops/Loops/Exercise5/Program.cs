@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace Exercise5
 {
@@ -13,7 +12,15 @@ namespace Exercise5
             string secondWord = Console.ReadLine();
 
             var lengthBetween = 30 - firstWord.Length - secondWord.Length;
-            Console.WriteLine(firstWord +String.Concat(Enumerable.Repeat(".", lengthBetween))+ secondWord );
+
+            Console.Write(firstWord);
+
+            for (var i = 0; i < lengthBetween; i++)
+            {
+                Console.Write(".");
+            }
+
+            Console.WriteLine(secondWord);
         }
     }
 }
