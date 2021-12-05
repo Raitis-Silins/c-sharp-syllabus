@@ -4,7 +4,7 @@ namespace Exercise9
 {
     class RollTwoDice
     {
-       public static void Dice()
+        public static void Dice()
         {
             var userInput = int.Parse(Console.ReadLine());
             Console.WriteLine($"Desired sum: {userInput}");
