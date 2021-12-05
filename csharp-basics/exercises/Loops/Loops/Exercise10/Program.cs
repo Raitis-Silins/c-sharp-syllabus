@@ -4,9 +4,9 @@ namespace Exercise10
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            NumberSquare.Square();
         }
     }
 }
