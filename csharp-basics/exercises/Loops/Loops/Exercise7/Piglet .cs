@@ -29,7 +29,6 @@ namespace Exercise7
 
                 if (userInput == 'y')
                 {
-                    Console.WriteLine();
                     continue;
                 }
                 else
