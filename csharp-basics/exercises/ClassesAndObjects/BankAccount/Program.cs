@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankAccount
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            BankAccount benBen = new BankAccount("Benson", 17.25);
+            BankAccount test = new BankAccount("test", -17.5);
+            Console.WriteLine(benBen.ShowUserNameAndbalance());
+            Console.WriteLine(test.ShowUserNameAndbalance());
         }
     }
 }
