@@ -7,17 +7,19 @@
 
         public Account(string v1, double v2)
         {
-            
+            _name = v1;
+            _money = v2;
         }
 
         public double Withdrawal(double i)
         {
-            return i;
+            _money -= i;
+            return _money;
         }
 
         public void Deposit(double i)
         {
-            
+            _money += i;
         }
 
         public double Balance()
@@ -30,10 +32,5 @@
             return $"{_name}: {_money}";
         }
 
-        public string Name
-        {
-            get => _name;
-            set => _name = value;
-        }
     }
 }
