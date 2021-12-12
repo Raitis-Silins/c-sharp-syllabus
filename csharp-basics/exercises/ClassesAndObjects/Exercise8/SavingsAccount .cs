@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Exercise8
+﻿namespace Exercise8
 {
     class SavingsAccount
     {

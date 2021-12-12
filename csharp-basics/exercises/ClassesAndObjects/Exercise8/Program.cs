@@ -23,15 +23,15 @@ namespace Exercise8
 
             for (var i = 0; i < _months; i++)
             {
-                Console.Write($"Enter amount deposited for month: {i + 1}  "); 
+                Console.Write($"Enter amount deposited for month: {i + 1}  ");
                 _depositAmount = decimal.Parse(Console.ReadLine());
 
-                test.Deposit(_depositAmount); 
+                test.Deposit(_depositAmount);
 
                 Console.Write($"Enter amount withdrawn for month: {i + 1}  ");
                 _withdrawAmount = decimal.Parse(Console.ReadLine());
 
-                test.Withdraw(_withdrawAmount); 
+                test.Withdraw(_withdrawAmount);
                 test.AcquireMonthlyInterest();
             }
 
@@ -40,14 +40,14 @@ namespace Exercise8
 
         public static void DisplayData(SavingsAccount test)
         {
-            decimal _balance = Math.Round(test.GetBalance() * (decimal)100.0) / (decimal)100.0; 
+            decimal _balance = Math.Round(test.GetBalance() * (decimal)100.0) / (decimal)100.0;
             decimal _totalInterest = Math.Round(test.GetTotalnterest() * (decimal)100.0) / (decimal)100.0;
 
             Console.WriteLine();
             Console.WriteLine($"Total deposited: ${test.GetTotalDeposits()}");
             Console.WriteLine($"Total withdrawn: ${test.GetTotalWithdraws()}");
             Console.WriteLine($"Interest earned: ${_totalInterest}");
-            Console.WriteLine($"Ending balance: ${_balance}"); 
+            Console.WriteLine($"Ending balance: ${_balance}");
         }
     }
 }

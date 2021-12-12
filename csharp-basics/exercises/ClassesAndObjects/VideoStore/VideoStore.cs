@@ -16,7 +16,7 @@ namespace VideoStore
         {
             _movies.Add(new Video(title));
         }
-        
+
         public void Checkout(string title)
         {
             var movie = FindAMovieByTitle(title);

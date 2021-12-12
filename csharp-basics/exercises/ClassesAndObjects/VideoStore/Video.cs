@@ -32,7 +32,7 @@ namespace VideoStore
 
         public double AverageRating()
         {
-            return _ratings.Sum()/_ratings.Count;
+            return _ratings.Sum() / _ratings.Count;
         }
 
         public bool Available()

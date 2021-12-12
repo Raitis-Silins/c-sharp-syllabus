@@ -9,7 +9,7 @@
         public Car(double startOdo)
         {
             _startKilometers = startOdo;
-            
+
         }
 
         public double CalculateConsumption()

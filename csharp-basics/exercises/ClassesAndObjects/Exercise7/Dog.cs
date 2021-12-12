@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Exercise7
+﻿namespace Exercise7
 {
     class Dog
     {
