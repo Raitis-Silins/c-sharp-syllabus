@@ -1,32 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise1
 {
     class Program
     {
-        /**
-           * Origination:
-           * Audi -> Germany
-           * BMW -> Germany
-           * Honda -> Japan
-           * Mercedes -> Germany
-           * VolksWagen -> Germany
-           * Tesla -> USA
-           */
 
         private static void Main(string[] args)
         {
             string[] array = { "Audi", "BMW", "Honda", "Mercedes", "VolksWagen", "Mercedes", "Tesla" };
 
-            //todo - replace array with an List and print out the results
+            List<string> cars = new List<string>();
+            cars.Add("Audi");
+            cars.Add("BMW");
+            cars.Add("Honda");
+            cars.Add("Mercedes");
+            cars.Add("VolksWagen");
+            cars.Add("Mercedes");
+            cars.Add("Tesla");
 
-            //todo - replace array with a HashSet and print out the results
+            foreach (var car in cars)
+            {
+                Console.WriteLine(car);
+            }
 
-            //todo - replace array with a Dictionary (use brand as key and origination as value) and print out the results
+            Console.WriteLine();
+
+            var hashSet = new HashSet<string>(array);
+
+            foreach (var car in hashSet)
+            {
+                Console.WriteLine(car);
+            }
+
+            Console.WriteLine();
+
+            IDictionary<string, string> carNames = new Dictionary<string, string>();
+            carNames.Add("Audi", "Germany");
+            carNames.Add("BMW", "Germany");
+            carNames.Add("Honda", "Japan");
+            carNames.Add("Mercedes", "Germany");
+            carNames.Add("VolksWagen", "Germany");
+            carNames.Add("Tesla", "USA");
+
+            foreach (KeyValuePair<string, string> car in carNames)
+            {
+                Console.WriteLine("{0} -> {1}", car.Key, car.Value);
+            }
+
         }
     }
 }
