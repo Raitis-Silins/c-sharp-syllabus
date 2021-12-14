@@ -13,7 +13,7 @@ namespace TicTacToe
             Game();
         }
 
-       private static void Game()
+        private static void Game()
         {
             char player = 'X';
 
@@ -40,7 +40,7 @@ namespace TicTacToe
                 Console.Write("\nPlease enter a col: ");
                 int col = int.Parse(Console.ReadKey().KeyChar.ToString());
 
-                if (board[row, col] == 'X' || board[row, col] == 'O' )
+                if (board[row, col] == 'X' || board[row, col] == 'O')
                 {
                     Console.WriteLine("Already exist's");
                     Console.ReadKey();
@@ -52,13 +52,13 @@ namespace TicTacToe
                 }
             }
         }
-
-       private static char ChangeTurn(char currentPlayer)
+        
+        private static char ChangeTurn(char currentPlayer)
         {
             return currentPlayer == 'X' ? 'O' : 'X';
         }
 
-       private static void Initialize(char[,] board)
+        private static void Initialize(char[,] board)
         {
             for (int row = 0; row < 3; row++)
             {
@@ -85,7 +85,7 @@ namespace TicTacToe
             }
         }
 
-       private static bool GetWinner(char player)
+        private static bool GetWinner(char player)
         {
             return player == board[0, 0] && player == board[0, 1] && player == board[0, 2] ||
             player == board[1, 0] && player == board[1, 1] && player == board[1, 2] ||
@@ -97,19 +97,19 @@ namespace TicTacToe
             player == board[0, 2] && player == board[1, 1] && player == board[2, 0];
         }
 
-       private static bool CheckIfDraw(char player)
-       {
-           for (int r = 0; r < 3; r++)
-           {
-               for (int c = 0; c < 3; c++)
-               {
-                   if (board[r, c] == ' ')
-                   {
-                       return false;
-                   }
-               }
-           }
-           return true;
-       }
+        private static bool CheckIfDraw(char player)
+        {
+            for (int r = 0; r < 3; r++)
+            {
+                for (int c = 0; c < 3; c++)
+                {
+                    if (board[r, c] == ' ')
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }
