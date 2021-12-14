@@ -4,11 +4,11 @@ namespace Exercise5
 {
     class Date
     {
-        private int _month { get; set; }
+        private int _month;
 
-        private int _day { get; set; }
+        private int _day;
 
-        private int _year { get; set; }
+        private int _year;
 
         public Date(int month, int day, int year)
         {

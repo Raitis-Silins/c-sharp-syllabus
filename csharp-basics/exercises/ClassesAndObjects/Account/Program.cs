@@ -6,7 +6,6 @@ namespace Account
     {
         private static void Main()
         {
-
             Account firstAccount = new Account("First Account", 100.00);
             firstAccount.Deposit(20.00);
             Console.WriteLine(firstAccount);
@@ -22,7 +21,7 @@ namespace Account
             Account bAcc = new Account("B", 0);
             Account cAcc = new Account("C", 0);
 
-            Transfer(aAcc,bAcc,50);
+            Transfer(aAcc, bAcc, 50);
             Transfer(bAcc, cAcc, 25);
 
             Console.WriteLine(aAcc);
@@ -32,7 +31,11 @@ namespace Account
 
         public static void Transfer(Account from, Account to, double howMuch)
         {
-            to.Deposit(from.Withdrawal(howMuch)); 
+            Account A = from;
+            Account B = to;
+
+            A.Withdrawal(howMuch);
+            B.Deposit(howMuch);
         }
     }
 }

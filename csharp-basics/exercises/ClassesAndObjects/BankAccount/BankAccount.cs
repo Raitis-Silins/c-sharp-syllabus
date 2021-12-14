@@ -4,8 +4,8 @@ namespace BankAccount
 {
     class BankAccount
     {
-        public double _balance;
-        public string _accountName;
+        private double _balance;
+        private string _accountName;
 
         public BankAccount(string account, double balance)
         {

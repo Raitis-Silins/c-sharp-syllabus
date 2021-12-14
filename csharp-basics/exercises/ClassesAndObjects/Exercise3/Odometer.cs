@@ -4,37 +4,37 @@ namespace Exercise3
 {
     class Odometer
     {
-        public double Mileage;
-        public FuelGauge ActualLiters;
+        private double _mileage;
+        private FuelGauge _actualLiters;
 
         public Odometer(double mileage, FuelGauge actualLiters)
         {
-            Mileage = mileage;
-            ActualLiters = actualLiters;
+            _mileage = mileage;
+            _actualLiters = actualLiters;
         }
 
         public void DisplayMileage()
         {
-            Console.WriteLine(Mileage);
+            Console.WriteLine(_mileage);
         }
 
         public void Increment()
         {
-            if (Mileage <= 999999)
+            if (_mileage <= 999999)
             {
-                Mileage++;
+                _mileage++;
             }
             else
             {
-                Mileage = 0;
+                _mileage = 0;
             }
         }
 
         public void Decrement()
         {
-            if (Mileage % 10 == 0)
+            if (_mileage % 10 == 0)
             {
-                ActualLiters.DecrementFuel();
+                _actualLiters.DecrementFuel();
             }
         }
     }

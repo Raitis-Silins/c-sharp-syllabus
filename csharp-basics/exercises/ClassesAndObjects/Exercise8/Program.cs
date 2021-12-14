@@ -6,32 +6,32 @@ namespace Exercise8
     {
         static void Main(string[] args)
         {
-            decimal _startBalance;
-            decimal _annualInterestRate;
-            int _months;
-            decimal _depositAmount;
-            decimal _withdrawAmount;
+            decimal startBalance;
+            decimal annualInterestRate;
+            int months;
+            decimal depositAmount;
+            decimal withdrawAmount;
 
             Console.Write("How much money is in the account?:  ");
-            _startBalance = decimal.Parse(Console.ReadLine());
+            startBalance = decimal.Parse(Console.ReadLine());
             Console.Write("Enter the annual interest rate:  ");
-            _annualInterestRate = decimal.Parse(Console.ReadLine());
+            annualInterestRate = decimal.Parse(Console.ReadLine());
             Console.Write("How long has the account been opened?:  ");
-            _months = int.Parse(Console.ReadLine());
+            months = int.Parse(Console.ReadLine());
 
-            SavingsAccount test = new SavingsAccount(startBalance: _startBalance, annualInterestRate: _annualInterestRate);
+            SavingsAccount test = new SavingsAccount(startBalance: startBalance, annualInterestRate: annualInterestRate);
 
-            for (var i = 0; i < _months; i++)
+            for (var i = 0; i < months; i++)
             {
                 Console.Write($"Enter amount deposited for month: {i + 1}  ");
-                _depositAmount = decimal.Parse(Console.ReadLine());
+                depositAmount = decimal.Parse(Console.ReadLine());
 
-                test.Deposit(_depositAmount);
+                test.Deposit(depositAmount);
 
                 Console.Write($"Enter amount withdrawn for month: {i + 1}  ");
-                _withdrawAmount = decimal.Parse(Console.ReadLine());
+                withdrawAmount = decimal.Parse(Console.ReadLine());
 
-                test.Withdraw(_withdrawAmount);
+                test.Withdraw(withdrawAmount);
                 test.AcquireMonthlyInterest();
             }
 
@@ -40,14 +40,14 @@ namespace Exercise8
 
         public static void DisplayData(SavingsAccount test)
         {
-            decimal _balance = Math.Round(test.GetBalance() * (decimal)100.0) / (decimal)100.0;
-            decimal _totalInterest = Math.Round(test.GetTotalnterest() * (decimal)100.0) / (decimal)100.0;
+            decimal balance = Math.Round(test.GetBalance() * (decimal)100.0) / (decimal)100.0;
+            decimal totalInterest = Math.Round(test.GetTotalnterest() * (decimal)100.0) / (decimal)100.0;
 
             Console.WriteLine();
             Console.WriteLine($"Total deposited: ${test.GetTotalDeposits()}");
             Console.WriteLine($"Total withdrawn: ${test.GetTotalWithdraws()}");
-            Console.WriteLine($"Interest earned: ${_totalInterest}");
-            Console.WriteLine($"Ending balance: ${_balance}");
+            Console.WriteLine($"Interest earned: ${totalInterest}");
+            Console.WriteLine($"Ending balance: ${balance}");
         }
     }
 }
