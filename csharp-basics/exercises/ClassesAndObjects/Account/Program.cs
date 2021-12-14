@@ -34,7 +34,7 @@ namespace Account
             Account A = from;
             Account B = to;
 
-            A.Withdrawal(howMuch);
+            from.Withdrawal(howMuch);
             B.Deposit(howMuch);
         }
     }
