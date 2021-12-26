@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Hierarchy;
 
 namespace Persons
 {
@@ -6,10 +6,11 @@ namespace Persons
     {
         static void Main(string[] args)
         {
-            /*
-             * - Create an instant of class Student and an instant of class Employee with proper values for the attributes.
-             * - Display the content of each class using Display() method.
-             */
+            var student = new Student("Gregorijs", "Bumbieris", "Melnavas fermas", 111, 56.3);
+            var employee = new Employee("Vladislavs", "Cepurnieks-Goppers", "zimbabwe", 1, "zāģeris");
+
+            student.Display();
+            employee.Display();
         }
     }
 }
