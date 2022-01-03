@@ -6,40 +6,15 @@ namespace PhoneBook
     public class PhoneDirectory
     {
         private SortedDictionary<string, string> _data;
-        private int _dataCount;
 
         public PhoneDirectory()
         {
             _data = new SortedDictionary<string, string>();
-            _dataCount = 0;
-        }
-
-        private string Find(string name)
-        {
-            for (var i = 0; i < _dataCount; i++)
-            {
-                if (_data.ContainsKey(name))
-                {
-                    return name;
-                }
-            }
-
-            return "No number";
         }
 
         public string GetNumber(string name)
         {
-            var location = Find(name);
-
-            if (location == "No number")
-            {
-                return null;
-            }
-            else
-            {
-                var num = _data[name];
-                return num;
-            }
+            return !NameExists(name) ? null : _data[name];
         }
 
         public void PutNumber(string name, string number)
@@ -49,7 +24,7 @@ namespace PhoneBook
                 throw new Exception("name and number cannot be null");
             }
 
-            if (_data.ContainsKey(name))
+            if (NameExists(name))
             {
                 _data[name] += number;
 
@@ -57,8 +32,12 @@ namespace PhoneBook
             else
             {
                 _data.Add(name, number);
-                _dataCount++;
             }
+        }
+
+        private bool NameExists(string name)
+        {
+            return _data.ContainsKey(name);
         }
     }
 }
