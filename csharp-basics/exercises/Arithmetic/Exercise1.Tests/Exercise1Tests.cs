@@ -64,24 +64,12 @@ namespace Exercise1.Tests
             var num2 = 16;
 
             //Act
-            var result = _target.CheckIntegers(num1, num2);
+            var result1 = _target.CheckIntegers(num1, num2);
+            var result2 = _target.CheckIntegers(num2, num1);
 
             //Assert
-            Assert.AreEqual(true, result);
-        }
-
-        [TestMethod]
-        public void CheckIntegers_IfSubtrIs15_ShouldReturnTrue()
-        {
-            //Arrange
-            var num1 = 16;
-            var num2 = 31;
-
-            //Act
-            var result = _target.CheckIntegers(num2, num1);
-
-            //Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(true, result1);
+            Assert.AreEqual(true, result2);
         }
     }
 }
