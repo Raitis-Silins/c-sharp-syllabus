@@ -7,42 +7,39 @@ namespace Exercise_6
     {
         public string CheckByIndex(int number)
         {
+            var result = "";
+
             if (number % 5 == 0 && number % 7 == 0)
             {
-                return "LozaWoza ";
+                result += "LozaWoza ";
             }
-
-            if (number % 3 == 0 && number % 7 == 0)
+            else if (number % 3 == 0 && number % 7 == 0)
             {
-                return "CozaWoza ";
+                result += "CozaWoza ";
             }
-
-            if (number % 3 == 0 && number % 5 == 0)
+            else if (number % 3 == 0 && number % 5 == 0)
             {
-                return "CozaLoza ";
+                result += "CozaLoza ";
             }
-
-            if (number % 7 == 0)
+            else if (number % 7 == 0)
             {
-                return "Woza ";
+                result += "Woza ";
             }
-
-            if (number % 5 == 0)
+            else if (number % 5 == 0)
             {
-                return "Loza ";
+                result += "Loza ";
             }
-
-            if (number % 3 == 0)
+            else if (number % 3 == 0)
             {
-                return "Coza ";
+                result += "Coza ";
             }
 
             if (number % 5 != 0 && number % 7 != 0 && number % 3 != 0)
             {
-                return number + " ";
+                result += number + " ";
             }
 
-            return null;
+            return result;
         }
         
 
