@@ -1,8 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 
 namespace WordCount
 {
@@ -11,16 +8,11 @@ namespace WordCount
         static void Main(string[] args)
         {
             var path = "../../lear.txt";
+            var text = new Calculate(File.ReadAllText(path));
 
-            string content = File.ReadAllText(path, Encoding.UTF8);
-
-            var lines = File.ReadAllLines(path).ToList();
-            var words = Regex.Matches(content, @"[A-Za-z]+").Count;
-            var chars = File.ReadAllLines(path).Sum(s => s.Length);
-
-            Console.WriteLine($"Lines {lines.Count}");
-            Console.WriteLine($"Words {words}");
-            Console.WriteLine($"Chars {chars}");
+            Console.WriteLine("Lines: " + text.LinesInText());
+            Console.WriteLine("Words: " + text.WordsInText());
+            Console.WriteLine("Chars: " + text.CharsInText());
         }
     }
 }

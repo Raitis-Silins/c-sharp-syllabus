@@ -1,4 +1,6 @@
-﻿namespace Exercise5
+﻿using System;
+
+namespace Exercise5
 {
     class Program
     {
@@ -6,7 +8,7 @@
         {
             Date DateTest = new Date(12, 01, 2017);
 
-            DateTest.DisplayDate();
+            Console.WriteLine(DateTest.DisplayDate());
         }
     }
 }

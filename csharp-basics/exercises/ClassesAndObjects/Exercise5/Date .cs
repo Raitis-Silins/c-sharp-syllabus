@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Exercise5
+﻿namespace Exercise5
 {
-    class Date
+    public class Date
     {
         private int _month;
 
@@ -17,9 +15,9 @@ namespace Exercise5
             _year = year;
         }
 
-        public void DisplayDate()
+        public string DisplayDate()
         {
-            Console.WriteLine($"{_month}/{_day}/{_year}");
+            return $"{_month}/{_day}/{_year}";
         }
     }
 }
