@@ -14,82 +14,20 @@ namespace Exercise6Tests
             _target = new CozaLozaWoza();
         }
 
-        [TestMethod]
-        public void CheckMultiples_Of5And7_shouldReturnLozaWoza()
+        [DataTestMethod]
+        [DataRow(70, "LozaWoza ")]
+        [DataRow(21, "CozaWoza ")]  
+        [DataRow(15, "CozaLoza ")]
+        [DataRow(7, "Woza ")]
+        [DataRow(5, "Loza ")]
+        [DataRow(3, "Coza ")]
+        public void CheckMultiples_ShouldReturnExpected(int number,  string expected)
         {
+            //Act
+            var actual = _target.CheckByIndex(number);
+
             //Assert
-            var expected = "LozaWoza ";
-
-            // Act
-            var result = _target.CheckByIndex(70);
-
-            // Assert
-            Assert.AreEqual(expected, result);
-        }
-
-        [TestMethod]
-        public void CheckMultiples_Of3And7_shouldReturnCozaWoza()
-        {
-            //Assert
-            var expected = "CozaWoza ";
-
-            // Act
-            var result = _target.CheckByIndex(21);
-
-            // Assert
-            Assert.AreEqual(expected, result);
-        }
-
-        [TestMethod]
-        public void CheckMultiples_Of3And5_shouldReturnCozaLoza()
-        {
-            //Assert
-            var expected = "CozaLoza ";
-
-            // Act
-            var result = _target.CheckByIndex(15);
-
-            // Assert
-            Assert.AreEqual(expected, result);
-        }
-
-        [TestMethod]
-        public void CheckMultiples_Of7_shouldReturnWoza()
-        {
-            //Assert
-            var expected = "Woza ";
-
-            // Act
-            var result = _target.CheckByIndex(7);
-
-            // Assert
-            Assert.AreEqual(expected, result);
-        }
-
-        [TestMethod]
-        public void CheckMultiples_Of5_shouldReturnLoza()
-        {
-            //Assert
-            var expected = "Loza ";
-
-            // Act
-            var result = _target.CheckByIndex(5);
-
-            // Assert
-            Assert.AreEqual(expected, result);
-        }
-
-        [TestMethod]
-        public void CheckMultiples_Of3_shouldReturnCoza()
-        {
-            //Assert
-            var expected = "Coza ";
-
-            // Act
-            var result = _target.CheckByIndex(3);
-
-            // Assert
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
