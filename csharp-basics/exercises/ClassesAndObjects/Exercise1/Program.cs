@@ -1,4 +1,6 @@
-﻿namespace Exercise1
+﻿using System;
+
+namespace Exercise1
 {
     class Program
     {
@@ -8,16 +10,15 @@
             Product p2 = new Product("iPhone 5s", 999.99, 3);
             Product p3 = new Product("Epson EB-U05", 440.46, 1);
 
-            p1.PrintProduct();
-            p2.PrintProduct();
-            p3.PrintProduct();
+            Console.WriteLine(p1.PrintProduct());
+            Console.WriteLine(p2.PrintProduct());
+            Console.WriteLine(p3.PrintProduct());
 
             p1.ChangeQuantity(5);
-            p1.PrintProduct();
+            Console.WriteLine(p1.PrintProduct());
 
             p2.ChangePrice(45.2);
-            p2.PrintProduct();
-
+            Console.WriteLine(p2.PrintProduct());
         }
     }
 }

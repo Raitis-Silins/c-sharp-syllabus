@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Exercise1
+﻿namespace Exercise1
 {
-    class Product
+    public class Product
     {
         private double _price;
         private int _amount;
@@ -15,19 +13,19 @@ namespace Exercise1
             _name = name;
         }
 
-        public void PrintProduct()
+        public string PrintProduct()
         {
-            Console.WriteLine($"{_name}, price {_price} EUR, amount {_amount} units");
+            return $"{_name}, price {_price} EUR, amount {_amount} units";
         }
 
-        public void ChangeQuantity(int quantity)
+        public int ChangeQuantity(int quantity)
         {
-            _amount = quantity;
+            return _amount = quantity;
         }
 
-        public void ChangePrice(double price)
+        public double ChangePrice(double price)
         {
-            _price = price;
+            return _price = price;
         }
     }
 }

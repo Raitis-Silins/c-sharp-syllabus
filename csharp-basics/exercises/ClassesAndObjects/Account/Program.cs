@@ -27,15 +27,13 @@ namespace Account
             Console.WriteLine(aAcc);
             Console.WriteLine(bAcc);
             Console.WriteLine(cAcc);
+
         }
 
         public static void Transfer(Account from, Account to, double howMuch)
         {
-            Account A = from;
-            Account B = to;
-
-            A.Withdrawal(howMuch);
-            B.Deposit(howMuch);
+            from.Withdrawal(howMuch);
+            to.Deposit(howMuch);
         }
     }
 }
